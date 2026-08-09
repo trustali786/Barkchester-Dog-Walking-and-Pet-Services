@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barkchester Dog Walking &amp; Pet Services | Home From Home in Salford</title>
+<meta name="description" content="Loving dog walking, daycare and holiday stays in Salford. Barkchester gives your dog walks, adventures, cuddles and a genuine home from home while you're away.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#F5B93A;
+    --gold-bright:#FFC94D;
+    --cream:#FFF9EF;
+    --forest:#1F3A32;
+    --forest-glow: rgba(31,58,50,.55);
+    --sage:#A8C3A0;
+    --brown:#7A5745;
+    --charcoal:#202020;
+    --white:#FFFFFF;
+    --forest-70: rgba(31,58,50,.7);
+    --gold-soft: rgba(245,185,58,.22);
+    --gold-glow: rgba(255,201,77,.55);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--cream);
+    color:var(--charcoal);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    color:var(--forest);
+    line-height:1.05;
+    font-weight:600;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{position:relative;}
+  .eyebrow{
+    font-family:'Work Sans',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.78rem;
+    font-weight:600;
+    color:var(--brown);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);display:inline-block;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 30px;
+    border-radius:100px;
+    font-weight:600;
+    font-size:.98rem;
+    cursor:pointer;
+    border:1.5px solid transparent;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .btn-primary{background:var(--forest);color:var(--cream);box-shadow:0 8px 24px rgba(31,58,50,.25);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 0 4px var(--gold-soft), 0 14px 32px var(--forest-glow);}
+  .btn-outline{background:transparent;border-color:rgba(31,58,50,.35);color:var(--forest);}
+  .btn-outline:hover{border-color:var(--forest);background:rgba(31,58,50,.06);box-shadow:0 0 22px rgba(31,58,50,.18);transform:translateY(-2px);}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:var(--forest);box-shadow:0 8px 20px rgba(244,185,66,.4);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 0 26px var(--gold-glow), 0 14px 30px rgba(244,185,66,.45);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(255,249,239,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(31,58,50,.08);
+    transition:padding .25s ease;
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;}
+  .logo{display:flex;flex-direction:column;line-height:1;}
+  .logo-mark{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;color:var(--forest);letter-spacing:.01em;}
+  .logo-sub{font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--brown);margin-top:4px;}
+  .nav-links{display:flex;gap:30px;align-items:center;}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--forest);position:relative;padding:4px 0;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .25s ease;}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-call{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+  .hamburger span{width:24px;height:2px;background:var(--forest);display:block;}
+  .mobile-panel{display:none;position:fixed;inset:0;background:var(--forest);z-index:200;padding:100px 32px 40px;flex-direction:column;gap:26px;}
+  .mobile-panel.open{display:flex;}
+  .mobile-panel a{color:var(--cream);font-family:'Fraunces',serif;font-size:1.6rem;}
+  .mobile-close{position:absolute;top:26px;right:26px;background:none;border:none;color:var(--cream);font-size:1.8rem;cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:172px 0 90px;
+    position:relative;
+    background:
+      radial-gradient(circle at 82% 12%, var(--gold-soft), transparent 45%),
+      linear-gradient(180deg, var(--cream) 0%, #FBF3E1 100%);
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;}
+  .hero-copy .eyebrow{color:var(--brown);}
+  .hero h1{font-size:clamp(2.6rem,4.6vw,4.1rem);margin-bottom:22px;}
+  .hero h1 em{font-style:italic;color:var(--gold);text-shadow:0 0 24px rgba(255,201,77,.4);}
+  .hero p.lead{font-size:1.15rem;color:var(--forest-70);max-width:520px;margin-bottom:36px;line-height:1.6;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:38px;}
+  .hero-trust{display:flex;align-items:center;gap:14px;}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:1.1rem;}
+  .hero-trust-text{font-size:.88rem;color:var(--forest);font-weight:600;}
+  .hero-trust-text span{display:block;font-weight:400;color:var(--forest-70);font-size:.8rem;}
+
+  .hero-visual{position:relative;height:520px;display:flex;align-items:center;justify-content:center;}
+  .blob{
+    position:absolute;width:440px;height:440px;border-radius:44% 56% 60% 40% / 50% 45% 55% 50%;
+    background:linear-gradient(150deg,var(--sage),var(--gold-soft));
+    box-shadow:0 0 90px 20px rgba(255,201,77,.28);
+    animation:morph 12s ease-in-out infinite;
+  }
+  @keyframes morph{
+    0%,100%{border-radius:44% 56% 60% 40% / 50% 45% 55% 50%;}
+    50%{border-radius:60% 40% 44% 56% / 40% 60% 40% 60%;}
+  }
+  .hero-dog{
+    position:relative;width:78%;border-radius:28px;
+    box-shadow:0 30px 60px -18px rgba(31,58,50,.35);
+    animation:float 6s ease-in-out infinite;
+    transform-origin:center;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0px) rotate(-1deg);}
+    50%{transform:translateY(-14px) rotate(1deg);}
+  }
+  .paw{position:absolute;color:var(--forest);opacity:.35;font-size:1.4rem;animation:drift 8s linear infinite;}
+  .paw:nth-child(2){top:10%;left:5%;animation-delay:0s;}
+  .paw:nth-child(3){top:70%;right:2%;animation-delay:2.5s;font-size:1rem;}
+  .paw:nth-child(4){bottom:5%;left:20%;animation-delay:5s;font-size:1.1rem;}
+  @keyframes drift{
+    0%{transform:translateY(0) rotate(0deg);opacity:.15;}
+    50%{transform:translateY(-18px) rotate(12deg);opacity:.4;}
+    100%{transform:translateY(0) rotate(0deg);opacity:.15;}
+  }
+
+  /* ---------- TRUST BAR ---------- */
+  .trustbar{background:var(--forest);padding:26px 0;}
+  .trustbar .wrap{display:flex;flex-wrap:wrap;gap:34px;align-items:center;justify-content:space-between;}
+  .trust-item{display:flex;align-items:center;gap:10px;color:var(--cream);font-size:.9rem;font-weight:500;}
+  .trust-item .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .trust-item .stars{color:var(--gold);}
+
+  /* ---------- SECTION HEAD ---------- */
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(2rem,3.4vw,2.8rem);}
+  .section-pad{padding:100px 0;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .service-card{
+    background:var(--white);
+    border-radius:20px;
+    padding:38px 30px;
+    border:1px solid rgba(31,58,50,.08);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .service-card:hover{transform:translateY(-8px);box-shadow:0 0 0 1px var(--gold-glow), 0 24px 44px -20px rgba(31,58,50,.3), 0 0 32px rgba(255,201,77,.25);border-color:transparent;}
+  .service-icon{
+    width:54px;height:54px;border-radius:50%;
+    background:var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;margin-bottom:22px;
+    transition:box-shadow .3s ease, transform .3s ease;
+  }
+  .service-card:hover .service-icon{box-shadow:0 0 20px var(--gold-glow);transform:scale(1.08);}
+  .service-card h3{font-size:1.3rem;margin-bottom:12px;}
+  .service-card p{color:var(--forest-70);font-size:.95rem;line-height:1.6;}
+
+  /* ---------- DIFFERENCE ---------- */
+  .difference{background:var(--forest);color:var(--cream);}
+  .difference .eyebrow{color:var(--gold);}
+  .difference .eyebrow::before{background:var(--gold);}
+  .difference h2{color:var(--cream);}
+  .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,249,239,.12);border-radius:22px;overflow:hidden;margin-top:40px;}
+  .diff-item{background:var(--forest);padding:36px 30px;transition:background .3s ease, box-shadow .3s ease;}
+  .diff-item:hover{background:#233f36;box-shadow:inset 0 0 40px rgba(255,201,77,.12), 0 0 24px rgba(255,201,77,.15);}
+  .diff-item h3{color:var(--gold);font-size:1.1rem;font-family:'Fraunces',serif;margin-bottom:10px;font-weight:500;transition:text-shadow .3s ease;}
+  .diff-item:hover h3{text-shadow:0 0 14px var(--gold-glow);}
+  .diff-item p{color:rgba(255,249,239,.75);font-size:.92rem;line-height:1.6;}
+
+  /* ---------- ABOUT ---------- */
+  .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center;}
+  .about-img{position:relative;}
+  .about-img img{border-radius:24px;box-shadow:0 30px 50px -20px rgba(31,58,50,.3);}
+  .about-badge{
+    position:absolute;bottom:-24px;right:-24px;
+    background:var(--gold);color:var(--forest);
+    padding:20px 24px;border-radius:16px;
+    font-family:'Fraunces',serif;font-weight:600;
+    text-align:center;box-shadow:0 14px 30px rgba(244,185,66,.4);
+  }
+  .about-badge .num{font-size:1.6rem;display:block;}
+  .about-badge .lbl{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;}
+  .about-copy p{color:var(--forest-70);font-size:1.02rem;line-height:1.75;margin-bottom:18px;}
+  .trait-row{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px;}
+  .trait{
+    background:var(--white);border:1px solid rgba(31,58,50,.12);
+    border-radius:100px;padding:8px 18px;font-size:.85rem;font-weight:500;color:var(--forest);
+  }
+
+  /* ---------- STORIES ---------- */
+  .stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .story-card{
+    background:var(--white);border-radius:20px;overflow:hidden;
+    border:1px solid rgba(31,58,50,.08);
+    transition:transform .3s ease;
+  }
+  .story-card:hover{transform:translateY(-6px);box-shadow:0 0 0 1px rgba(245,185,58,.3), 0 22px 40px -18px rgba(31,58,50,.28), 0 0 28px rgba(255,201,77,.2);}
+  .story-top{padding:26px 26px 0;}
+  .story-name{font-family:'Fraunces',serif;font-size:1.25rem;color:var(--forest);margin-bottom:6px;}
+  .story-tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--brown);font-weight:600;}
+  .story-body{padding:16px 26px 28px;color:var(--forest-70);font-size:.92rem;line-height:1.65;}
+  .story-strip{height:6px;background:linear-gradient(90deg,var(--gold),var(--sage));}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{background:#FBF3E1;}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .test-card{background:var(--white);border-radius:20px;padding:32px;border:1px solid rgba(31,58,50,.08);transition:transform .3s ease, box-shadow .3s ease;}
+  .test-card:hover{transform:translateY(-6px);box-shadow:0 0 0 1px rgba(245,185,58,.3), 0 20px 38px -18px rgba(31,58,50,.25), 0 0 26px rgba(255,201,77,.2);}
+  .test-card .stars{margin-bottom:16px;display:block;}
+  .test-card p{font-size:.98rem;color:var(--forest);line-height:1.65;margin-bottom:18px;font-style:italic;}
+  .test-author{font-size:.85rem;font-weight:600;color:var(--brown);}
+
+  /* ---------- STATS ---------- */
+  .stats{padding:80px 0;}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;}
+  .stat-num{font-family:'Fraunces',serif;font-size:3rem;color:var(--forest);font-weight:600;}
+  .stat-lbl{color:var(--brown);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-top:8px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-item{border-bottom:1px solid rgba(31,58,50,.14);padding:24px 0;cursor:pointer;transition:background .25s ease, padding-left .25s ease;border-radius:12px;}
+  .faq-item:hover{background:var(--gold-soft);padding-left:16px;padding-right:16px;}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;font-family:'Fraunces',serif;font-size:1.1rem;color:var(--forest);}
+  .faq-icon{font-size:1.3rem;transition:transform .35s ease, filter .35s ease;filter:grayscale(1) opacity(.55);}
+  .faq-item:hover .faq-icon{filter:grayscale(0) opacity(1) drop-shadow(0 0 8px var(--gold-glow));transform:scale(1.15) rotate(-8deg);}
+  .faq-item.open .faq-icon{transform:rotate(45deg) scale(1.1);filter:grayscale(0) opacity(1) drop-shadow(0 0 10px var(--gold-glow));}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;color:var(--forest-70);font-size:.95rem;line-height:1.65;}
+  .faq-item.open .faq-a{max-height:200px;padding-top:14px;}
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:linear-gradient(135deg,var(--forest),#16281f);
+    border-radius:32px;padding:70px 50px;text-align:center;color:var(--cream);
+    position:relative;overflow:hidden;
+  }
+  .cta-band::before{
+    content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;
+    background:var(--gold-soft);border-radius:50%;
+  }
+  .cta-band h2{color:var(--cream);margin-bottom:16px;}
+  .cta-band p{color:rgba(255,249,239,.75);margin-bottom:32px;font-size:1.02rem;}
+  .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--forest);color:rgba(255,249,239,.7);padding:60px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  .footer-logo{font-family:'Fraunces',serif;color:var(--cream);font-size:1.4rem;margin-bottom:14px;}
+  footer h4{color:var(--cream);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;}
+  footer a{display:block;color:rgba(255,249,239,.7);font-size:.92rem;margin-bottom:10px;transition:color .2s ease;}
+  footer a:hover{color:var(--gold);}
+  .footer-bottom{border-top:1px solid rgba(255,249,239,.12);padding-top:24px;font-size:.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  .sticky-mobile-cta{display:none;}
+
+  [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  [data-reveal].in{opacity:1;transform:translateY(0);}
+
+  @media (max-width:940px){
+    .nav-links, .nav-cta .nav-call, .nav-cta .btn-outline{display:none;}
+    .hamburger{display:flex;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{height:380px;order:-1;}
+    .services-grid,.diff-grid,.stories-grid,.test-grid,.stats-grid{grid-template-columns:1fr 1fr;}
+    .about{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .sticky-mobile-cta{
+      display:flex;position:fixed;bottom:0;left:0;right:0;z-index:90;
+      background:var(--forest);padding:12px 16px;gap:10px;
+      box-shadow:0 -6px 20px rgba(0,0,0,.15);
+    }
+    .sticky-mobile-cta a{flex:1;text-align:center;padding:14px;border-radius:100px;font-weight:600;font-size:.9rem;}
+    body{padding-bottom:76px;}
+  }
+  @media (max-width:600px){
+    .services-grid,.diff-grid,.stories-grid,.test-grid,.stats-grid,.footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:150px;}
+    .cta-band{padding:48px 24px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="logo">
+      <span class="logo-mark">Barkchester</span>
+      <span class="logo-sub">Dog Walking &amp; Pet Services</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#difference">Why Barkchester</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+447855295725" class="nav-call">📞 07855 295725</a>
+      <a href="#contact" class="btn btn-primary" style="padding:12px 22px;font-size:.88rem;">Book a Meet &amp; Greet</a>
+      <button class="hamburger" onclick="document.getElementById('mobilePanel').classList.add('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <button class="mobile-close" onclick="document.getElementById('mobilePanel').classList.remove('open')">✕</button>
+  <a href="#services" onclick="document.getElementById('mobilePanel').classList.remove('open')">Services</a>
+  <a href="#about" onclick="document.getElementById('mobilePanel').classList.remove('open')">About</a>
+  <a href="#difference" onclick="document.getElementById('mobilePanel').classList.remove('open')">Why Barkchester</a>
+  <a href="#reviews" onclick="document.getElementById('mobilePanel').classList.remove('open')">Reviews</a>
+  <a href="#faq" onclick="document.getElementById('mobilePanel').classList.remove('open')">FAQ</a>
+  <a href="#contact" onclick="document.getElementById('mobilePanel').classList.remove('open')">Contact</a>
+  <a href="tel:+447855295725">📞 07855 295725</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy" data-reveal>
+        <span class="eyebrow">Dog Walking &amp; Pet Services in Salford</span>
+        <h1>A Home From Home<br>for <em>Happy Dogs.</em></h1>
+        <p class="lead">From regular walks to relaxing holiday stays, Barkchester provides personal, loving care that helps dogs feel right at home — with walks, adventures, cuddles and genuine attention every step of the way.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Book a Meet &amp; Greet →</a>
+          <a href="tel:+447855295725" class="btn btn-outline">Call 07855 295725</a>
+        </div>
+        <div class="hero-trust">
+          <span class="stars">★★★★★</span>
+          <span class="hero-trust-text">5.0 Google Rating <span>Based on 10 reviews</span></span>
+        </div>
+      </div>
+      <div class="hero-visual" data-reveal>
+        <div class="blob"></div>
+        <span class="paw">🐾</span><span class="paw">🐾</span><span class="paw">🐾</span>
+        <img class="hero-dog" src="images/sophia-pack.jpg" alt="Sophia from Barkchester walking her pack of dogs in Salford">
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trustbar">
+    <div class="wrap">
+      <div class="trust-item"><span class="stars">★★★★★</span> 5.0 Google Rating</div>
+      <div class="trust-item"><span class="dot"></span> 10 Reviews</div>
+      <div class="trust-item"><span class="dot"></span> Personal Pet Care</div>
+      <div class="trust-item"><span class="dot"></span> Home-From-Home Experience</div>
+      <div class="trust-item"><span class="dot"></span> Regular Updates</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section-pad" id="services">
+    <div class="wrap">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow" style="justify-content:center;">Services</span>
+        <h2>More Than a Walk.<br>A Proper Dog Day Out.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-reveal>
+          <div class="service-icon">🐕</div>
+          <h3>Dog Walking</h3>
+          <p>Regular walks designed around your dog's own routine — local walks, adventures, exercise and individual attention, with a friendly debrief after every visit.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-icon">☀️</div>
+          <h3>Dog Daycare</h3>
+          <p>A relaxed day at Barkchester means walks, playtime, cuddles and company, all in a home-like setting where your dog is treated as an individual, not a number.</p>
+        </div>
+        <div class="service-card" data-reveal>
+          <div class="service-icon">🏡</div>
+          <h3>Home-From-Home Boarding &amp; Holiday Stays</h3>
+          <p>While you're away, your dog stays somewhere that genuinely feels like home — walks, playtime, cuddles, treats and regular updates so you can relax too.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENCE -->
+  <section class="section-pad difference" id="difference">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">The Barkchester Difference</span>
+        <h2>Not a Kennel. Not Just a Walk.<br>A Home From Home.</h2>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-item" data-reveal>
+          <h3>Home From Home</h3>
+          <p>Customers describe their dogs' stays as feeling like a real home, not a kennel.</p>
+        </div>
+        <div class="diff-item" data-reveal>
+          <h3>Personal Attention</h3>
+          <p>Sophia personally looks after every dog — no rotating staff, just one familiar, trusted face.</p>
+        </div>
+        <div class="diff-item" data-reveal>
+          <h3>Walks &amp; Adventures</h3>
+          <p>Dogs enjoy local walks and new adventures suited to their energy and personality.</p>
+        </div>
+        <div class="diff-item" data-reveal>
+          <h3>Cuddles, Play &amp; Treats</h3>
+          <p>Reviews consistently mention affection, playtime and treats as part of every stay.</p>
+        </div>
+        <div class="diff-item" data-reveal>
+          <h3>Regular Updates</h3>
+          <p>Owners receive updates while their dogs are staying, so you're never left wondering.</p>
+        </div>
+        <div class="diff-item" data-reveal>
+          <h3>Genuine Connection</h3>
+          <p>Several reviews describe dogs becoming visibly excited the moment Sophia arrives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section-pad" id="about">
+    <div class="wrap about">
+      <div class="about-img" data-reveal>
+        <img src="images/sophia-pack.jpg" alt="Sophia from Barkchester walking her pack of dogs through the woods">
+        <div class="about-badge">
+          <span class="num">5.0★</span>
+          <span class="lbl">10 Reviews</span>
+        </div>
+      </div>
+      <div class="about-copy" data-reveal>
+        <span class="eyebrow">Meet Sophia</span>
+        <h2 style="font-size:clamp(2rem,3.4vw,2.6rem);margin-bottom:20px;">The person behind the Barkchester pack.</h2>
+        <p>At Barkchester, dogs aren't treated like bookings on a calendar. Sophia gets to know their personalities, routines and quirks, creating a relaxed environment where they can feel comfortable, have fun and enjoy being part of the Barkchester pack.</p>
+        <p>Customers describe Sophia as kind, loving, reliable and genuinely passionate about dogs — someone who communicates often and treats every dog as an individual.</p>
+        <div class="trait-row">
+          <span class="trait">Kind</span>
+          <span class="trait">Reliable</span>
+          <span class="trait">Communicative</span>
+          <span class="trait">Friendly</span>
+          <span class="trait">Accommodating</span>
+          <span class="trait">Loving</span>
+        </div>
+        <a href="#contact" class="btn btn-primary">Book a Meet &amp; Greet →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIES -->
+  <section class="section-pad" style="background:#FBF3E1;" id="stories">
+    <div class="wrap">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow" style="justify-content:center;">Real Dogs, Real Experiences</span>
+        <h2>Every Dog Has a Story at Barkchester.</h2>
+      </div>
+      <div class="stories-grid">
+        <div class="story-card" data-reveal>
+          <div class="story-strip"></div>
+          <div class="story-top">
+            <div class="story-name">Taylor</div>
+            <div class="story-tag">Holiday Stay</div>
+          </div>
+          <div class="story-body">Taylor stayed with Barkchester while her owners were at a festival that didn't allow dogs. Sophia welcomed her as part of the pack — holiday care for when life takes you somewhere your dog can't go.</div>
+        </div>
+        <div class="story-card" data-reveal>
+          <div class="story-strip"></div>
+          <div class="story-top">
+            <div class="story-name">Gumbo</div>
+            <div class="story-tag">Gentle Care</div>
+          </div>
+          <div class="story-body">Gumbo is a nervous pup who loves his visits, local walks and new adventures with Sophia — gentle, patient care that helps him feel comfortable.</div>
+        </div>
+        <div class="story-card" data-reveal>
+          <div class="story-strip"></div>
+          <div class="story-top">
+            <div class="story-name">Wilbur</div>
+            <div class="story-tag">Regular Walks</div>
+          </div>
+          <div class="story-body">Wilbur heads out with Sophia twice a week. His owner values the safety and the friendly debrief after every walk — regular exercise plus real peace of mind.</div>
+        </div>
+        <div class="story-card" data-reveal>
+          <div class="story-strip"></div>
+          <div class="story-top">
+            <div class="story-name">Sadie</div>
+            <div class="story-tag">Home-From-Home</div>
+          </div>
+          <div class="story-body">Sadie enjoyed walks, playtime and plenty of cuddles during her stay — and felt right at home the whole time.</div>
+        </div>
+        <div class="story-card" data-reveal>
+          <div class="story-strip"></div>
+          <div class="story-top">
+            <div class="story-name">Dusty</div>
+            <div class="story-tag">Stay Connected</div>
+          </div>
+          <div class="story-body">Dusty loves his stays at Barkchester, and his owner receives updates throughout — so holidays feel a little easier.</div>
+        </div>
+        <div class="story-card" data-reveal>
+          <div class="story-strip"></div>
+          <div class="story-top">
+            <div class="story-name">Stanley</div>
+            <div class="story-tag">Years of Trust</div>
+          </div>
+          <div class="story-body">Stanley has been walked by Barkchester for years. His owner describes Sophia as reliable, communicative, friendly and loving — trust built over time.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-pad testimonials" id="reviews">
+    <div class="wrap">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow" style="justify-content:center;">Testimonials</span>
+        <h2>What Dog Owners Say</h2>
+        <div style="margin-top:16px;"><span class="stars">★★★★★</span> <strong>5.0</strong> Google Rating · 10 Reviews</div>
+      </div>
+      <div class="test-grid">
+        <div class="test-card" data-reveal>
+          <span class="stars">★★★★★</span>
+          <p>"A real home from home for our dog — she comes back happy and settled every time."</p>
+          <div class="test-author">Google Review</div>
+        </div>
+        <div class="test-card" data-reveal>
+          <span class="stars">★★★★★</span>
+          <p>"Sophia is so reliable and communicative — we always know our dog is safe and loved."</p>
+          <div class="test-author">Google Review</div>
+        </div>
+        <div class="test-card" data-reveal>
+          <span class="stars">★★★★★</span>
+          <p>"Walks, adventures, cuddles and updates the whole time — exactly the peace of mind we needed."</p>
+          <div class="test-author">Google Review</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:44px;">
+        <a href="#contact" class="btn btn-outline">Read More Reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div data-reveal><div class="stat-num">5.0★</div><div class="stat-lbl">Google Rating</div></div>
+      <div data-reveal><div class="stat-num">10</div><div class="stat-lbl">Google Reviews</div></div>
+      <div data-reveal><div class="stat-num">100%</div><div class="stat-lbl">Personal Care</div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad" id="faq">
+    <div class="wrap" style="max-width:760px;">
+      <div class="section-head center" data-reveal>
+        <span class="eyebrow" style="justify-content:center;">FAQ</span>
+        <h2>Good to Know</h2>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Is my dog cared for personally, or by different staff?<span class="faq-icon">🐾</span></div>
+        <div class="faq-a">Sophia personally looks after every dog at Barkchester — the same familiar, trusted face every visit.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Will I get updates while my dog is staying?<span class="faq-icon">🐾</span></div>
+        <div class="faq-a">Yes — regular updates are a key part of the Barkchester experience, so you can relax while you're away.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Do you take nervous or first-time dogs?<span class="faq-icon">🐾</span></div>
+        <div class="faq-a">Barkchester offers gentle, patient care — a Meet &amp; Greet is a great first step to see how your dog settles in.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">How do I get started?<span class="faq-icon">🐾</span></div>
+        <div class="faq-a">Book a Meet &amp; Greet or give Barkchester a call on 07855 295725 to talk through what your dog needs.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="section-pad" id="contact">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <span class="eyebrow" style="color:var(--gold);justify-content:center;">Get In Touch</span>
+        <h2>Ready for a Home From Home?</h2>
+        <p>Book a Meet &amp; Greet with Sophia and see how happy, relaxed and loved your dog can feel at Barkchester.</p>
+        <div class="cta-actions">
+          <a href="tel:+447855295725" class="btn btn-gold">Book a Meet &amp; Greet →</a>
+          <a href="tel:+447855295725" class="btn btn-outline" style="border-color:rgba(255,249,239,.4);color:var(--cream);">Call 07855 295725</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Barkchester</div>
+        <p style="max-width:320px;font-size:.9rem;line-height:1.7;">Loving dog walking, daycare and holiday stays in Salford — a genuine home from home for happy dogs.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#services">Services</a>
+        <a href="#about">About Sophia</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+447855295725">07855 295725</a>
+        <a href="#" style="pointer-events:none;">5 Matlock Ave, Salford M7 3RN</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Barkchester Dog Walking &amp; Pet Services. All rights reserved.</span>
+      <span>Salford, Greater Manchester</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-mobile-cta">
+  <a href="tel:+447855295725" class="btn-outline" style="border:1.5px solid var(--gold);color:var(--gold);">Call</a>
+  <a href="#contact" class="btn-gold">Book a Meet &amp; Greet</a>
+</div>
+
+<script>
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // subtle cursor parallax on hero image (desktop only)
+  const heroDog = document.querySelector('.hero-dog');
+  if(window.matchMedia('(min-width:941px)').matches && heroDog){
+    document.querySelector('.hero-visual').addEventListener('mousemove',(e)=>{
+      const r = e.currentTarget.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width/2)/r.width;
+      const y = (e.clientY - r.top - r.height/2)/r.height;
+      heroDog.style.transform = `translate(${x*10}px, ${y*10}px)`;
+    });
+  }
+</script>
+
+</body>
+</html>
